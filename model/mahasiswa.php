@@ -1,7 +1,7 @@
 <?php
-function createMahasiswa($conn,$nama, $alamat, $tmpLahir, $tglLahir, $imageName){
+function createMahasiswa($conn,$nrp, $nama, $alamat, $tmpLahir, $tglLahir, $imageName){
 
-    $sql="INSERT INTO profile(nama,alamat,tmpLahir,tglLahir,imageName) VALUES('$nama','$alamat', '$tmpLahir', '$tglLahir', '$imageName')";
+    $sql="INSERT INTO profile(nrp,nama,alamat,tmpLahir,tglLahir,imageName) VALUES('$nrp','$nama','$alamat', '$tmpLahir', '$tglLahir', '$imageName')";
     if(mysqli_query($conn,$sql)) {
         return true;
     }
@@ -16,6 +16,7 @@ function getMahasiswa($conn){
     while($row = mysqli_fetch_array($result)){
         $mahasiswa_temp=array();
         $mahasiswa_temp['id']=$row['id'];
+        $mahasiswa_temp['nrp']=$row['nrp'];
         $mahasiswa_temp['nama']=$row['nama'];
         $mahasiswa_temp['alamat']=$row['alamat'];
         $mahasiswa_temp['tmpLahir']=$row['tmpLahir'];
@@ -27,12 +28,12 @@ function getMahasiswa($conn){
     return $mahasiswa;
 }
 
-function updateMahasiswa($conn,$id,$nama, $alamat, $tmpLahir, $tglLahir, $imageName){
+function updateMahasiswa($conn,$id, $nrp,$nama, $alamat, $tmpLahir, $tglLahir, $imageName){
     $sql_image = "SELECT * FROM profile WHERE id=$id";
     $result=mysqli_query($conn, $sql_image);
     $row = mysqli_fetch_array($result);
     unlink("../image/{$row['imagename']}");
-    $sql="UPDATE profile SET nama='$nama', alamat='$alamat', tmpLahir='$tmpLahir', tglLahir='$tglLahir', imageName='$imageName' WHERE id=$id";
+    $sql="UPDATE profile SET nrp='$nrp', nama='$nama', alamat='$alamat', tmpLahir='$tmpLahir', tglLahir='$tglLahir', imageName='$imageName' WHERE id=$id";
     if(mysqli_query($conn,$sql)) {
         return true;
     }

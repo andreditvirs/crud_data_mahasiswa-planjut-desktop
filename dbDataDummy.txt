@@ -1,0 +1,26 @@
+CREATE TABLE profile(
+	id INT AUTO_INCREMENT,
+	nrp VARCHAR(10) NOT NULL, 
+	nama VARCHAR(30) NOT NULL,
+	tmpLahir VARCHAR(20) NOT NULL,
+	tglLahir VARCHAR(10) NOT NULL,
+	alamat VARCHAR(50) NOT NULL,
+	imagename LONGTEXT NOT NULL,
+	PRIMARY KEY(id)
+);
+
+INSERT INTO 
+	profile(nrp, nama, tmpLahir, tglLahir, alamat, imagename)
+VALUES
+	('2103181032','Praditya Nafiis Muhammad','xxx','00-00-0000','xxx','2103181032.jpg'),
+	('2103181033','Bimo Prasetyo Afif','xxx','00-00-0000','xxx','2103181033.jpg'),
+	('2103181035','Muhammad Rivaldin','xxx','00-00-0000','xxx','2103181035.jpg'),
+	('2103181042','Muhammad Irvan Yanuar','xxx','00-00-0000','xxx','2103181042.jpg'),
+	('2103181043','Danindra Ihya Maulalhaq','xxx','00-00-0000','xxx','2103181043.jpg'),
+	('2103181044','Affan Abiyyu','xxx','00-00-0000','xxx','2103181044.jpg'),
+	('2103181047','Ahmad Faiz Kamaludin','xxx','00-00-0000','xxx','2103181047.jpg'),
+	('2103181049','Irvan Eksa Mahendra','xxx','00-00-0000','xxx','2103181049.jpg'),
+	('2103181050','Anwar Yusuf Al Bastomi','xxx','00-00-0000','xxx','2103181050.jpg'),
+	('2103181052','Muhammad Anand Fardhani','xxx','00-00-0000','xxx','2103181052.jpg'),
+	('2103181053','M Sulthan Rafif B.','xxx','00-00-0000','xxx','2103181053.jpg'),
+	('2103181054','Akhlakul Karim Hbp','xxx','00-00-0000','xxx','2103181054.jpg');

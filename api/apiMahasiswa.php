@@ -23,8 +23,8 @@ function isTheseParametersAvailable($params){
     if(isset($_GET['apicall'])){
         switch($_GET['apicall']){
             case 'create_mahasiswa':
-                isTheseParametersAvailable(array('nama','alamat', 'tmpLahir', 'tglLahir', 'imageName')); 
-                $result=createMahasiswa($conn,$_POST['nama'],$_POST['alamat'],$_POST['tmpLahir'],$_POST['tglLahir'], $_POST['imageName']);
+                isTheseParametersAvailable(array('nrp','nama','alamat', 'tmpLahir', 'tglLahir', 'imageName')); 
+                $result=createMahasiswa($conn,$_POST['nrp'], $_POST['nama'],$_POST['alamat'],$_POST['tmpLahir'],$_POST['tglLahir'], $_POST['imageName']);
                 if($result){
                     $response['error']=false;
                     $response['message'] = 'Mahasiswa berhasil ditambahkan';
@@ -35,8 +35,8 @@ function isTheseParametersAvailable($params){
                 }
                 break;
             case 'update_mahasiswa':
-                isTheseParametersAvailable(array('id','nama','alamat', 'tmpLahir', 'tglLahir', 'imageName'));
-                $result=updateMahasiswa($conn,$_POST['id'],$_POST['nama'], $_POST['alamat'],$_POST['tmpLahir'],$_POST['tglLahir'], $_POST['imageName']);
+                isTheseParametersAvailable(array('id','nrp', 'nama', 'alamat', 'tmpLahir', 'tglLahir', 'imageName'));
+                $result=updateMahasiswa($conn,$_POST['id'], $_POST['nrp'], $_POST['nama'], $_POST['alamat'], $_POST['tmpLahir'],$_POST['tglLahir'], $_POST['imageName']);
                 if($result){
                     $response['error']=false;
                     $response['message'] = 'Mahasiswa berhasil ditambahkan';
